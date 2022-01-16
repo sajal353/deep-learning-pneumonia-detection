@@ -1,0 +1,29 @@
+{
+  "name": "deep-learning-pneumonia-detection",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "train": "ts-node train.ts",
+    "process": "ts-node resizeAndLabel.ts",
+    "predict": "ts-node predict.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajal353/deep-learning-pneumonia-detection.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sajal353/deep-learning-pneumonia-detection/issues"
+  },
+  "homepage": "https://github.com/sajal353/deep-learning-pneumonia-detection#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.13.0",
+    "@tensorflow/tfjs-node": "^3.13.0",
+    "@types/jimp": "^0.2.28",
+    "jimp": "^0.16.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
