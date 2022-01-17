@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "train": "ts-node train.ts",
     "process": "ts-node resizeAndLabel.ts",
+    "train": "ts-node train.ts",
     "predict": "ts-node predict.ts"
   },
   "repository": {

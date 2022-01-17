@@ -32,17 +32,17 @@ const train = async () => {
     const testFiles: Array<string> = await fsPromises.readdir(testData);
 
     console.log(
-      `Total testing files: ${testFiles.length} with ${NUM_OF_CLASSES} classes. Resizing and Creating Features and Labels...`
+      `Total testing files: ${testFiles.length} with ${NUM_OF_CLASSES} classes. Creating Features and Labels...`
     );
 
     for (const file of testFiles) {
-      const feature = await generateFeatureTensor(trainData + file);
+      const feature = await generateFeatureTensor(testData + file);
       const label = file.split("-")[1].split(".")[0];
       testFeatureArray.push(feature);
       testLabelArray.push(label);
     }
 
-    console.log(`Resizing complete. Features and Labels created.`);
+    console.log(`Features and Labels created.`);
     console.log(`Creating Tensors with One-Hot Label Array...`);
 
     let tensorFeatures = tf.stack(featureArray);
@@ -152,7 +152,7 @@ const train = async () => {
     console.log(`Training Model...`);
 
     await model.fit(tensorFeatures, tensorLabels, {
-      epochs: 5,
+      epochs: 10,
       batchSize: 32,
       validationSplit: 0.1,
     });
