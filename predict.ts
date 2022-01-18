@@ -26,4 +26,4 @@ const predict = async (file: any) => {
   console.log(`Pneumonia Probability: ${result.dataSync()[1] * 100}%`);
 };
 
-predict("./dataset/train/PNEUMONIA/person2_bacteria_4.jpeg");
+predict("./dataset/val/PNEUMONIA/person1950_bacteria_4881.jpeg");

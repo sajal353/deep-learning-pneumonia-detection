@@ -5,6 +5,22 @@ import { generateFeatureTensor } from "./utils";
 const fsPromises = fs.promises;
 const dir = __dirname;
 
+//Export Log
+import util from "util";
+let log_file = fs.createWriteStream(
+  __dirname + "/logs" + `/${Date.now()}-debug.log`,
+  { flags: "w" }
+);
+let log_stdout = process.stdout;
+
+console.log = function (d) {
+  log_file.write(util.format(d) + "\n");
+  log_stdout.write(util.format(d) + "\n");
+};
+
+//Log time and date
+console.log(new Date());
+
 const trainData = "./dataset/train/trainData/";
 const testData = "./dataset/test/testData/";
 const NUM_OF_CLASSES = 2;
@@ -152,7 +168,7 @@ const train = async () => {
     console.log(`Training Model...`);
 
     await model.fit(tensorFeatures, tensorLabels, {
-      epochs: 10,
+      epochs: 5,
       batchSize: 32,
       validationSplit: 0.1,
     });

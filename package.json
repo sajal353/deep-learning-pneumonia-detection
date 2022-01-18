@@ -5,6 +5,7 @@
   "scripts": {
     "process": "ts-node resizeAndLabel.ts",
     "train": "ts-node train.ts",
+    "evaluate": "ts-node evaluate.ts",
     "predict": "ts-node predict.ts"
   },
   "repository": {
