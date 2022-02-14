@@ -33,7 +33,7 @@ export default async function predict(req, res) {
           });
         }
         const model = await tf.loadLayersModel(
-          `http://localhost:3000/model.json`
+          `https://frost-dl.herokuapp.com/model.json`
         );
 
         let imageBuffer;
