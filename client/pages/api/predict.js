@@ -1,5 +1,5 @@
 import * as tf from "@tensorflow/tfjs";
-import { decodeImage } from "@tensorflow/tfjs-node/dist/image";
+import { node } from "@tensorflow/tfjs-node";
 import Jimp from "jimp";
 import formidable from "formidable";
 
@@ -44,7 +44,7 @@ export default async function predict(req, res) {
           imageBuffer = await resizedImage.getBufferAsync(Jimp.MIME_JPEG);
         });
 
-        const image = decodeImage(imageBuffer);
+        const image = node.decodeImage(imageBuffer);
 
         const imageTensor = tf.image
           .resizeBilinear(image, [256, 256])
