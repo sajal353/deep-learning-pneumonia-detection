@@ -171,6 +171,20 @@ const train = async () => {
       epochs: 5,
       batchSize: 32,
       validationSplit: 0.1,
+      callbacks: {
+        onTrainBegin: () => {
+          console.log("Training started");
+        },
+        onEpochEnd: (epoch: any, logs: any) =>
+          console.log(
+            `Epoch ${epoch}: Loss: ${logs.loss.toFixed(
+              3
+            )}, Accuracy: ${logs.acc.toFixed(3)}`
+          ),
+        onTrainEnd: () => {
+          console.log("Training ended");
+        },
+      },
     });
 
     const result: any = model.evaluate(testTensorFeatures, testTensorLabels, {
@@ -182,6 +196,8 @@ const train = async () => {
     });
 
     await model.save(`file://${dir}/model`);
+    await model.save(`file://${dir}/client/public/model`);
+
     console.log(`Model trained and saved.`);
   } catch (error) {
     console.log(error);
