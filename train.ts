@@ -179,7 +179,11 @@ const train = async () => {
           console.log(
             `Epoch ${epoch}: Loss: ${logs.loss.toFixed(
               3
-            )}, Accuracy: ${logs.acc.toFixed(3)}`
+            )}, Accuracy: ${logs.acc.toFixed(
+              3
+            )}, Validation Loss: ${logs.val_loss.toFixed(
+              3
+            )}, Validation Accuracy: ${logs.val_acc.toFixed(3)}`
           ),
         onTrainEnd: () => {
           console.log("Training ended");

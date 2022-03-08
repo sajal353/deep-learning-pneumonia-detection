@@ -1,0 +1,87 @@
+2022-02-25T14:39:39.431Z
+Total training files: 2000 with 2 classes. Resizing and Creating Features and Labels...
+Total testing files: 624 with 2 classes. Creating Features and Labels...
+Features and Labels created.
+Creating Tensors with One-Hot Label Array...
+Tensors created.
+Creating Model...
+_________________________________________________________________
+Layer (type)                 Output shape              Param #   
+=================================================================
+conv2d_Conv2D1 (Conv2D)      [null,256,256,32]         896       
+_________________________________________________________________
+batch_normalization_BatchNor [null,256,256,32]         128       
+_________________________________________________________________
+max_pooling2d_MaxPooling2D1  [null,128,128,32]         0         
+_________________________________________________________________
+conv2d_Conv2D2 (Conv2D)      [null,128,128,64]         18496     
+_________________________________________________________________
+dropout_Dropout1 (Dropout)   [null,128,128,64]         0         
+_________________________________________________________________
+batch_normalization_BatchNor [null,128,128,64]         256       
+_________________________________________________________________
+max_pooling2d_MaxPooling2D2  [null,64,64,64]           0         
+_________________________________________________________________
+conv2d_Conv2D3 (Conv2D)      [null,64,64,64]           36928     
+_________________________________________________________________
+batch_normalization_BatchNor [null,64,64,64]           256       
+_________________________________________________________________
+max_pooling2d_MaxPooling2D3  [null,32,32,64]           0         
+_________________________________________________________________
+conv2d_Conv2D4 (Conv2D)      [null,32,32,128]          73856     
+_________________________________________________________________
+dropout_Dropout2 (Dropout)   [null,32,32,128]          0         
+_________________________________________________________________
+batch_normalization_BatchNor [null,32,32,128]          512       
+_________________________________________________________________
+max_pooling2d_MaxPooling2D4  [null,16,16,128]          0         
+_________________________________________________________________
+conv2d_Conv2D5 (Conv2D)      [null,16,16,256]          295168    
+_________________________________________________________________
+dropout_Dropout3 (Dropout)   [null,16,16,256]          0         
+_________________________________________________________________
+batch_normalization_BatchNor [null,16,16,256]          1024      
+_________________________________________________________________
+max_pooling2d_MaxPooling2D5  [null,8,8,256]            0         
+_________________________________________________________________
+flatten_Flatten1 (Flatten)   [null,16384]              0         
+_________________________________________________________________
+dense_Dense1 (Dense)         [null,128]                2097280   
+_________________________________________________________________
+dropout_Dropout4 (Dropout)   [null,128]                0         
+_________________________________________________________________
+dense_Dense2 (Dense)         [null,2]                  258       
+=================================================================
+Total params: 2525058
+Trainable params: 2523970
+Non-trainable params: 1088
+_________________________________________________________________
+Model created.
+Training Model...
+Training started
+Epoch 0: Loss: 0.698, Accuracy: 0.904, Validation Loss: 2.139, Validation Accuracy: 0.565
+Epoch 1: Loss: 0.177, Accuracy: 0.958, Validation Loss: 0.931, Validation Accuracy: 0.683
+Epoch 2: Loss: 0.161, Accuracy: 0.964, Validation Loss: 0.604, Validation Accuracy: 0.822
+Epoch 3: Loss: 0.117, Accuracy: 0.977, Validation Loss: 0.845, Validation Accuracy: 0.822
+Epoch 4: Loss: 0.115, Accuracy: 0.979, Validation Loss: 0.674, Validation Accuracy: 0.738
+Epoch 5: Loss: 0.126, Accuracy: 0.979, Validation Loss: 0.155, Validation Accuracy: 0.925
+Epoch 6: Loss: 0.097, Accuracy: 0.983, Validation Loss: 0.129, Validation Accuracy: 0.938
+Epoch 7: Loss: 0.148, Accuracy: 0.968, Validation Loss: 0.146, Validation Accuracy: 0.957
+Epoch 8: Loss: 0.114, Accuracy: 0.977, Validation Loss: 0.320, Validation Accuracy: 0.863
+Epoch 9: Loss: 0.122, Accuracy: 0.976, Validation Loss: 0.331, Validation Accuracy: 0.895
+Epoch 10: Loss: 0.094, Accuracy: 0.983, Validation Loss: 0.053, Validation Accuracy: 0.983
+Epoch 11: Loss: 0.084, Accuracy: 0.988, Validation Loss: 0.072, Validation Accuracy: 0.978
+Epoch 12: Loss: 0.152, Accuracy: 0.966, Validation Loss: 0.038, Validation Accuracy: 0.983
+Epoch 13: Loss: 0.083, Accuracy: 0.985, Validation Loss: 0.095, Validation Accuracy: 0.978
+Epoch 14: Loss: 0.077, Accuracy: 0.990, Validation Loss: 0.233, Validation Accuracy: 0.942
+Epoch 15: Loss: 0.071, Accuracy: 0.990, Validation Loss: 0.079, Validation Accuracy: 0.988
+Epoch 16: Loss: 0.062, Accuracy: 0.993, Validation Loss: 0.057, Validation Accuracy: 0.985
+Epoch 17: Loss: 0.056, Accuracy: 0.996, Validation Loss: 0.063, Validation Accuracy: 0.985
+Epoch 18: Loss: 0.057, Accuracy: 0.996, Validation Loss: 0.076, Validation Accuracy: 0.985
+Epoch 19: Loss: 0.052, Accuracy: 0.992, Validation Loss: 0.087, Validation Accuracy: 0.985
+Training ended
+loss: Tensor
+    1.4465571641921997
+acc: Tensor
+    0.7796474099159241
+Model trained and saved.
